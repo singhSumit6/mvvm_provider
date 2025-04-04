@@ -15,6 +15,11 @@ class FetchDataException extends AppExceptions {
       : super(prefix: 'Error During Communication.', message: message);
 }
 
+class TimeoutException extends AppExceptions {
+  TimeoutException([String message = ''])
+      : super(prefix: 'Timeout.', message: message);
+}
+
 class BadRequestException extends AppExceptions {
   BadRequestException([String message = ''])
       : super(prefix: 'Invalid Request.', message: message);
