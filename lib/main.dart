@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm_provider/res/app_colors.dart';
 import 'package:mvvm_provider/utils/routes/routes.dart';
 import 'package:mvvm_provider/utils/routes/routes_name.dart';
 
@@ -16,14 +17,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.black,
-            iconTheme: IconThemeData(color: Colors.white),
-            titleTextStyle: TextStyle(
-                color: Colors.white,
+        appBarTheme:  AppBarTheme(
+            backgroundColor: AppColors.white,
+            iconTheme:  IconThemeData(color: AppColors.black),
+            shape: const OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.black, width: 0.1),
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10))
+            ),
+            titleTextStyle:  TextStyle(
+                color: AppColors.primaryColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 22)),
-        useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple).copyWith(background: const Color.fromARGB(255, 0, 0, 0))
+        useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple).copyWith(background: Colors.white)
       ),
       initialRoute: RoutesName.login,
       onGenerateRoute: Routes.generateRoute,
